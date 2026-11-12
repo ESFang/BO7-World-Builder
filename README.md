@@ -6,7 +6,7 @@ Build your own version of any map. Place props and machines, move or delete what
 
 Works in Multiplayer, Zombies and Endgame on Kronos.
 
-Current version: **v1.69** (scripts s1.21)
+Current version: **v1.70.1** (scripts s1.22)
 
 ---
 
@@ -22,14 +22,15 @@ Current version: **v1.69** (scripts s1.21)
 ### By hand (from a release on this page)
 
 1. Grab the zip from the [Releases](../../releases) page.
-2. Unzip it. You'll get a folder called `forge_tool`.
-3. Drop that folder into `cod25\kronos\mods\` so you end up with `cod25\kronos\mods\forge_tool\mod.json`.
-4. Turn it on in the launcher (or set `"forge_tool": true` in `cod25\kronos\mods.json`).
-5. Restart the launcher, not just the game.
+2. Unzip it. You'll get `forge_tool` and `point_drop`.
+3. Drop them into `cod25\kronos\mods\` so you end up with `cod25\kronos\mods\forge_tool\mod.json`.
+4. If you had an older version, delete `cod25\kronos\mods\forge_tool\scripts\compiled`.
+5. Turn them on in the launcher (or set `"forge_tool": true` in `cod25\kronos\mods.json`).
+6. Restart the launcher, not just the game.
 
-**Heads up:** the very first map you load after installing or updating takes a bit longer while the scripts get built. Load into a private match on your own the first time and let it finish. After that it's fast.
+**Heads up:** the first map you load after installing or updating takes longer while the scripts get built. Load a private match on your own the first time and let it finish. After that it's fast.
 
-If the menu footer still shows an old version number, you didn't restart the launcher. That one gets everybody.
+If the menu footer still shows an old version number, you didn't restart the launcher.
 
 ---
 
@@ -43,223 +44,125 @@ If the menu footer still shows an old version number, you didn't restart the lau
 | **Left / Right** | Change a pick (the rows with `<  >`) |
 | **Enter** | Run the row |
 | **Backspace** | Go back |
-| **/** | Search |
+| **1 to 6** | Jump to a hub |
+| **/** | Search every page, row and model |
 
-Anything the game says back to you shows up in the hint bar at the bottom, and every page has a colored status bar. Green means it worked, red means it didn't (and it'll tell you why).
-
-Some rows say **(Enter twice)**. Those are the ones that delete stuff, so you have to press Enter a second time within a few seconds to confirm.
+New to it? Open **Saves and System > Help > Start here**. It walks you through your first object in six steps.
 
 Nothing runs on its own. You start every mode and every change yourself.
 
 ### Editing keys
 
-Once you've hooked something (more on that below) these keys do the work:
+Once you've hooked something these keys do the work:
 
 | Key | What it does |
 |---|---|
-| **K** | Hook mode: grab whatever is in front of you |
+| **K** | Hook whatever is in front of you |
 | **Q / E** | Nudge it back / forward |
 | **P** | Switch axis (X, Y, Z) |
 | **U** | Switch between Move, Rotate and Scale |
 | **H** | Hide / unhide it |
 | **Del** twice | Delete it |
 | **Z** | Undo the last change |
-| **B** | Open Properties for a hooked machine |
+| **B** | Properties for a hooked machine |
 
-Don't like these? Change any of them in **Settings > Key bindings**.
-
----
-
-## Your first build (5 minutes)
-
-This is the fastest way to get a feel for it.
-
-1. Load into any map and press **F8**. You land on the **Toolbox**.
-2. Pick **Add map objects** and choose a category, say **Props**. Scroll to something you like and press **Enter**. It shows up in front of you.
-   - **Shift + Enter** places it and jumps you straight into editing it.
-3. Now it's hooked. Use **Q / E** to slide it around, **P** to change axis, and **U** to switch to rotate or scale.
-4. Want it somewhere exact? Open **Exact position** and type the X, Y, Z (or use **Copy my position** to drop it where you're standing).
-5. Go back to the Toolbox and open **Save world**. Type a name, hit **Save layout**.
-6. Restart the map, open **Save world** again, pick your save from **Existing saves** and hit **Load layout**. Everything comes back.
-
-That's the whole loop. Add, hook, adjust, save.
+Change any of them in **Settings > Key bindings**.
 
 ---
 
-## The Toolbox
+## The six hubs
 
-The Toolbox is the first page you see. It's kept short on purpose.
+Home shows six hubs. Press 1 to 6 to jump to one from anywhere.
 
-- **Add map objects** - spawn models and full machines, sorted by category
-- **Move map objects** - the map's own machines and benches (perks, Pack-a-Punch, wall buys, the box...)
-- **Find and hook** - a numbered list of what's near you, so you can grab things that are hard to aim at
-- **Save world** - save, load and manage your layouts
-- **AI spawning** - zombies, bosses, soldiers, spawners
-- **Player** - weapons, perks, points, armor, streaks, vehicles
-- **Map** - zones, power and doors, rounds, sky, map rules
-- **Misc** - gestures, sounds, drops
-- **Add-Ons** - your other mods and the built-in game modes
-- **Tutorial** - a short in-game version of this page
-- **Settings** - key bindings, UI position, colors
-- **Fix stuck commands** - press this if a row ever stops answering
-
-There's a search box at the top too. Type part of a page name and jump straight to it.
+1. **Build** - Object Library, Map Assets, Select nearby, Buyable Door
+2. **Spawn** - AI, vehicles, drops and crates
+3. **Player** - loadout, abilities, points and salvage, appearance
+4. **World** - rounds, enemy type, map rules, zones, power, doors, sky, FX, sounds, boss fight
+5. **Modes** - coming soon
+6. **Saves and System** - World Saves, Settings, Help
 
 ---
 
-## Everything it can do
+## What's new in v1.70.1
+
+### Fixes
+- Menu no longer lags or fails to open big pages (Object Library, Map Assets)
+- Layout Load and Start layout use a clean black fade
+- Wunderfizz unlock now counts drinks from placed perk machines
+- Loose change works on placed perk machines
+
+### New
+- Build > Remove & Restore: delete everything, delete what you placed, restore the map
+- Power & Doors: open all, lock all, restore doors
+- Mystery Box Properties: Active / Deactivated
+- Portals: cost, cooldown, timed return portal and a minimap icon
+- Buildable table: 3 book parts, cost to build, weapon drop with aether crystal and aether tool, table disappears or stays disabled after build
+- Objectives: Press Use steps with an on-screen tracker
+- Aether Crystal Properties: respawn rate and loot rarity
+- Vision & Screen FX page
+- Player Quotes page
+
+---
+
+## What's new in v1.70
+
+### Menu
+- New layout: six hubs, tabs on merged pages, search from Home, XYZ readout while editing
+- Rounded menu, 14 accent themes, text color, menu size 50-120%
+- UI Positioning moves the F8 menu, hint indicator, status message and hotkey bar, each with its own size and opacity. The status message shows a preview while you move it
+- Help rebuilt as short topics: Start here, Menu keys, Move and edit, Place things, Saving, Fixes
 
 ### Building
+- Object Library categories: Machines & assets, Buyable doors, Fast travel, Prefabs, Custom, Spawn points, Props and more
+- Copied perk machines work like the map's own, one buy per press. Double Tap, Melee Macchiato and Vulture Aid copies fight zombies like the real ones
+- Any perk on any map where the game can load it
+- Give all perks works like Perkaholic; Eternal perks (keep when downed) is an on/off row
+- Chompy (trash can) on any Zombies map
+- Teleporters and portal pairs (walk-in option)
+- Power switch with game-style prompt and sound; doors that open when the power comes on
+- Buyable doors: copy a map door or place any model, open by price or power, custom open sound and FX
+- Armor wall buys that sell your next armor level, like the map's own; placed wall buys face the right way
+- Custom objectives with a tracker
+- Edit menu Activate / Deactivate for Tedd, exfil, Wunderfizz, perk machines and the power switch
+- Map Assets: hook any machine, trap or fast travel spot and open it in Edit
+- Place an active Wunderfizz in front of you at any round
+- Tedd can be activated at the nearest spot
+- Delete is permanent, Hide moves things out of the way
+- Delete all objects I placed (Enter twice)
 
-- Place any model from the full model list, with search and filters (map, mode, category)
-- Categories: Machines & assets, Buyable doors, Spawn points, Props, Furniture, Nature, Lighting, Static vehicles, Barriers, plus Recent and All models
-- Place real working machines: perks, Pack-a-Punch, ammo crates, Arsenal, crafting bench, Mystery Box, Wunderfizz, Gobblegum
-- Hook anything in front of you, or the closest thing you can interact with
-- Move, rotate and scale with steps or typed values
-- Exact position page: type X / Y / Z / yaw, or copy your own position and facing
-- Bring object (pull the hooked thing in front of you)
-- Go look at it (teleports you to the hooked object)
-- Copy and paste objects
-- Change model on a placed object, or reset it
-- Make objects solid or not
-- Hide or unhide anything, including parts of the map
-- Undo
-- Animate objects, and play the map's own asset animations on hooked objects
-- Your Models list so you can find what you placed
+### Rules and rewards
+- Power: Regular, Classic (off until switched on) or Buried (switch turns it on and off)
+- Wunderfizz Randomize (like the relic)
+- Golden armor on/off, Aether Crystal and Aether Tool drops, rare salvage rewards
+- Resources > Drop puts points on the ground for free
 
-### The map's own stuff
+### Point Drop (separate mod, in the zip)
+Crouch and hold **N** to drop 250 of your points for anyone to pick up.
 
-- Move the real perk machines, Pack-a-Punch, box, ammo, Arsenal, crafting bench, Wunderfizz and wall buys
-- Copy them to new spots
-- Remove all of a kind, then bring everything back with Restore all
-- Turn power on, activate machines
-- Teddy bear on or off for the Mystery Box
-
-### Machine Properties
-
-Hook a machine and press **B** (or Edit Object > Properties).
-
-- Pack-a-Punch: Regular or Max
-- Wall buys: weapon rarity, Common to Legendary
-- Armor wall buys: golden armor
-- Gobblegum: pack only or any gum, 3 spins a round or unlimited
-
-Properties save with your layout.
-
-### Doors, zones and power
-
-- Open or close every door, or one at a time
-- Lock, unlock or delete doors
-- Place your own buyable door with any model and any price, or copy a map door
-- Power on / off
-- Teleport to any zone, open or close zones, only your zone on, Open All Zones
-- Remove invisible clips you're looking at (and put them back)
-
-### Map Rules
-
-All of these save with your layout.
-
-- Disable Objectives (also moves the main quest up to the boss)
-- Disable Announcer
-- Disable Special Rounds
-- Disable Ash and Fog Spawns where the map has them
-- Pack-a-Punch level 4
-- Arsenal Ultra rarity
-- Mystery Box: Regular, Never moves, or Always active
-- Stay in this arena (Dead Ops)
-
-### Rounds and enemies
-
-- Next / previous round, jump to any round, reset to round 1, end the current round
-- Start exfil or close the exfil window
-- Change Enemy Type: swap normal round zombies for any other enemy, with health and alive limit settings
-- Create Spawner: your own spawn spots with a marker, how many per wave, which rounds, and spawn effects
-
-### AI spawning
-
-- Quick spawn list, bosses, Zombies AI, Endgame AI, Multiplayer AI and other AI
-- Spawn them hostile or friendly
-- Kill the last one or all of them
-- Multiplayer bots with team, weapon and skin picks
-
-### Player
-
-- Give any weapon (BO7, BO6, MW2, MW3, MW2019 and more), or drop it on the ground
-- Attachments for the gun you're holding
-- Weapon Enhancement (Experimental): Pack-a-Punch, rarity and ammo mod on your primary, secondary or knife, plus camos and blueprints
-- Zombies perks and MP perks (including zombies perks in MP)
-- Points and salvage: give, set or take
-- Armor level and refill
-- Lethals and tacticals
-- Killstreaks and supply drops
-- Vehicles
-- Operator skin
-- Gestures and animations
-
-### Rewards and drops
-
-- Build your own reward crate: rarity, points, salvage, a weapon (with rarity and Pack-a-Punch), equipment, a scorestreak
-- Power-up drops for the map you're on, plus Multiplayer and event / boss drops
-
-### Endgame and Survival
-
-- Shop laptops: weapons, equipment, air support, perk station
-- Exotic and Jailbreak benches
-- Set your cash and change the wave
-
-### Sky and effects
-
-- Swap the skybox and rotate it
-- Vision sets
-- Spawn effects and stop them all at once
-
-### Boss fights
-
-- Start the boss fight, go to the boss arena, turn on just the boss zone, open everything
-
-### Saving
-
-- Save as many layouts per map as you want
-- Load one, delete one, list them
-- **Load default** restarts the map and loads your default layout for it
-- **Start Mode** gives you a fresh round 1 on your layout: M1911, knife, frags, and your perks, salvage and armor reset
-- Saves keep your objects, machine settings and map rules
-
-### Add-Ons and game modes
-
-- **Gun Game** - set kills per gun and your own gun list
-- **Chaos Mode** - set the start time and how fast it ramps up
-- **Zombie Battle** (Zombies)
-- Shortcuts to your other mods if they're installed: Survival (MP Zombies), Onslaught, Endgame, Boss Fights
-
-### Settings
-
-- Rebind every editing key
-- Move the menu and the hint bar anywhere on screen
-- Change the menu colors
-- Scripts: write little scripts of console lines in a built-in notepad, then run or stop them
-- Hide unavailable items (on by default, turn it off to see everything)
+### Removed
+Gun Game, Chaos Mode, Zombie Battle, the Add-Ons page and the Tutorial page (replaced by Help). Tombstone is gone from perk lists because it isn't in BO7.
 
 ---
 
 ## Tips
 
-- **Restart the launcher after every update.** If something looks old, this is why.
-- Things that are baked into the map (part of the level itself) can't be hooked. If K grabs nothing, try **Find and hook**.
-- If a row stops responding, use **Fix stuck commands** on the Toolbox.
-- Rows that don't work in the mode you're in are hidden. Turn off **Hide unavailable items** if you want to see them anyway.
-- Your layouts live in `cod25\kronos\world\`. Back that folder up if you care about your builds.
+- **Restart the launcher after every update.**
+- Things baked into the map can't be hooked. If K grabs nothing, try **Build > Select nearby**.
+- If a row stops responding, use **Settings > Fix stuck commands**.
+- Saves are per map. Your layouts live in `cod25\kronos\world\`. Back that folder up if you care about your builds.
 
 ## Known issues
 
-- Placed copies of perk machines may not sell on some maps (Mantis, Zarya). Moving the map's own perk machine works fine. This is being worked on for v1.70.
 - Multiplayer skybox and vision changes don't work yet.
+- Paradox rotates its perks, so a perk missing there isn't a bug.
+- Copied perk machines work but don't play their machine animations.
+- The Modes hub is marked Coming soon.
 
 ## Updating
 
-Workshop: just update it in the launcher, then restart the launcher.
+Workshop: update it in the launcher, then restart the launcher.
 
-By hand: replace the `forge_tool` folder with the new one. Your saved layouts are in a different folder, so they stay.
+By hand: replace the `forge_tool` folder and delete its `scripts\compiled` folder. Your saved layouts are in a different folder, so they stay.
 
 ---
 
